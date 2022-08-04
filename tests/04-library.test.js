@@ -1,4 +1,4 @@
-const { createTestScheduler } = require('jest')
+
 const {User} = require('../src/04-library')
 const {Book} = require('../src/04-library')
 

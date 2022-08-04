@@ -51,7 +51,7 @@ class Xwing extends Spaceship {
   }
 
   speed () {
-    return this.basicSpeed * this.shield === 0 ? 2 : 1
+    return this.basicSpeed * (this.shield === 0 ? 2 : 1)
   }
 
   levelUp (x) {
@@ -60,3 +60,5 @@ class Xwing extends Spaceship {
   }
 
 }
+
+module.exports = {Spaceship, Xwing}
