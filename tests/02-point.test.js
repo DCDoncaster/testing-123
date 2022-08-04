@@ -1,0 +1,62 @@
+const {Point} = require('../src/02-point')
+
+
+
+describe('The Point Class should', () =>{
+    test('Assign x and y coords correctly', () =>{
+        const p1 = new Point(5,5)
+        const p2 = new Point(10,2)
+        const p3 = new Point(4,5)
+        expect(p1.x).toBe(5)
+        expect(p1.y).toBe(5)
+        expect(p2.x).toBe(10)
+        expect(p2.y).toBe(2)
+        expect(p3.x).toBe(4)
+        expect(p3.y).toBe(5)
+    })
+    test('Move according to the translation entered', () =>{
+        const p1 = new Point(5,5)
+        const p2 = new Point(10,2)
+        const p3 = new Point(4,5)
+        p1.move(2,2)
+        expect(p1.x).toBe(7)
+        expect(p1.y).toBe(7)
+        p2.move(10,5)
+        expect(p2.x).toBe(20)
+        expect(p2.y).toBe(7)
+        p3.move(-4,1)
+        expect(p3.x).toBe(0)
+        expect(p3.y).toBe(6)
+    })
+    test('Mirror itself when relect method is run', () => {
+        const p1 = new Point(5,5)
+        const p2 = new Point(10,2)
+        const p3 = new Point(4,5)
+        p1.reflect()
+        p2.reflect()
+        p3.reflect()
+        expect(p1.x).toBe(5)
+        expect(p1.y).toBe(5)
+        expect(p2.x).toBe(2)
+        expect(p2.y).toBe(10)
+        expect(p3.x).toBe(5)
+        expect(p3.y).toBe(4)
+    })
+    test('Adjust coordinates by a factor of x when stretched',() => {
+        
+        const p1 = new Point(5,5)
+        const p2 = new Point(10,2)
+        const p3 = new Point(4,5)
+        
+        p1.stretch(4)
+        p2.stretch(5)
+        p3.stretch(10)
+        expect(p1.x).toBe(20)
+        expect(p1.y).toBe(20)
+        expect(p2.x).toBe(50)
+        expect(p2.y).toBe(10)
+        expect(p3.x).toBe(40)
+        expect(p3.y).toBe(50)
+
+    })
+})

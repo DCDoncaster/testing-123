@@ -4,7 +4,8 @@
   "description": "The purpose of this repo is to give you some experience writing tests using the Jest testing library. You can check out [their documentation](https://jestjs.io/docs/getting-started) any time if there's anything you need to know.",
   "main": "index.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+      "test:report":"jest --coverage=true"
   },
   "repository": {
     "type": "git",
